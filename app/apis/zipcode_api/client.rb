@@ -5,7 +5,12 @@
 
 module ZipcodeAPI
   class Client
-    BASE_URL = 'https://www.zipcodeapi.com/rest/RuO4IbtPALzhFUhg292i2QRPdFkFCB6LLWg1DoxWV6H9CAQql9T4JOANQqwWUdnT/radius.json/'
+    # I think AWS Secrets Manager is probably a better location to store credentials, 
+    # rather than as an environment variable (which still requires some secure way of getting them there)
+    # or as Rails encrypted credentials which still requires uploading secrets to version control,
+    # but for now we'll use Rails encrypted credentials.
+    API_KEY = Rails.application.credentials.zipcode_api[:api_key]
+    BASE_URL = "https://www.zipcodeapi.com/rest/#{API_KEY}/radius.json/"
 
     class << self
       def client
