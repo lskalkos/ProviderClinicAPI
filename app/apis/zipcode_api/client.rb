@@ -2,10 +2,14 @@
 
 ##
 # This class is a client wrapper for the Zipcode API.
+# I like using wrapper class that act as clients for external APIs.
+# Because the interaction is encapsulated, we can then use the wrapper throughout
+# the codebase and only have one location where the interface is managed. This
+# also makes it easy to change things if the API is updated or deprecated.
 
 module ZipcodeAPI
   class Client
-    # I think AWS Secrets Manager is probably a better location to store credentials, 
+    # I think AWS Secrets Manager is probably a better location to store credentials,
     # rather than as an environment variable (which still requires some secure way of getting them there)
     # or as Rails encrypted credentials which still requires uploading secrets to version control,
     # but for now we'll use Rails encrypted credentials.
