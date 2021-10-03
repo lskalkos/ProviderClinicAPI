@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Provider Clinics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Zipcode</th>
+      <th>Radius</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @provider_clinics.each do |provider_clinic| %>
+      <tr>
+        <td><%= provider_clinic.zipcode %></td>
+        <td><%= provider_clinic.radius %></td>
+        <td><%= link_to 'Show', provider_clinic %></td>
+        <td><%= link_to 'Edit', edit_provider_clinic_path(provider_clinic) %></td>
+        <td><%= link_to 'Destroy', provider_clinic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Provider Clinic', new_provider_clinic_path %>
