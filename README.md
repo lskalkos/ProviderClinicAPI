@@ -13,4 +13,4 @@ A couple of notes about my sample:
 - I don't consider it production ready! I would go through a lot more steps to make it so, including code review, actually testing the API through Postman, having a README, etc.
 - The specs pass on my computer but I didn't worry about environment management, so not sure how things will work on your side if you clone the repo right now and try to run them. 
 - I didn't worry about version control best practices for this, so you won't see much of a Git history. In real life I would have more atomic commits with better commit messages. I've included a lot of my comments with my thinking -- in practice my comments would be condensed. 
-- I used this as an opportunity to experiment with YardDoc and the JSON-API gem :)
+- I used this as an opportunity to experiment with YardDoc and the jsonapi-rails gem :)
