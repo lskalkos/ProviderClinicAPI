@@ -9,6 +9,8 @@ class ProviderClinicsController < ApplicationController
     return render status: 422 if params[:zipcode].nil?
 
     nearby_clinics = ProviderClinic.by_tier_and_distance(zipcodes_by_distance)
+    # Another part of this refactor includes abstracting away serialization.
+    # This is now handled via jsonapi-rails with the SerializableProviderClinic class.
     render jsonapi: nearby_clinics, status: :ok
   end
 
